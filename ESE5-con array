@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class ese5 {
+    public static void main(String[] args){
+    Scanner scelta = new Scanner(System.in);
+    int scelta_utente;
+    System.out.println("Insersci 1- ENTRA 2- ESCI");
+    scelta_utente = scelta.nextInt();
+
+    Scanner visua = new Scanner(System.in);
+    int visual_array;   
+
+    switch(scelta_utente){
+    
+        case 1: 
+        System.out.println("Sei Entrato, quale array vuoi visualizzare? 1- Numeri 2- Stringhe");
+        visual_array = visua.nextInt();
+
+        switch (visual_array){
+
+            case 1:
+            System.out.println("Hai scelto Numeri");
+            Integer arr[] = {1,2,3,4,5,6};
+            System.out.println("Array:"+Arrays.toString(arr));
+            ArrayList<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(arr));
+            //qui apro scanner e inseriò la variabile al posto di 2
+            
+            arrayList.add(2);
+
+            //arr = arrayList.toArray();
+
+
+            break;
+
+            case 2:
+            System.out.println("Hai scelto Stringhe");
+            String arr2[] = {"A","B","C","D","E","F"};
+            System.out.println("Array:"+Arrays.toString(arr2));
+            ArrayList<String> arrayList2 = new ArrayList<String>(Arrays.asList(arr2));
+        
+
+
+
+        }
+
+
+
+
+
+    }
+
+}
+}
