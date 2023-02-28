@@ -1,159 +1,70 @@
 import java.util.Scanner;
-
 public class Automobile {
- 
-
     public static void main(String[] args){
-
-        accesso();
-    
+        Menu();
     }
 
-    public static void accesso(){
-
-        boolean controllo = false;
-
-        do{
-
-        System.out.print("Inserire: 1- Ripeti\n  2- Esci\n");
-        Scanner scelta1 = new Scanner(System.in);
-        int scelta_1;
-        scelta_1 = scelta1.nextInt();
-
-        switch(scelta_1){
-
+    public static void Menu(){
+        int scelta;
+        
+        Scanner oggetto = new Scanner(System.in); //int
+        System.out.println("vuoi iniziare o uscire?\n1 - inizia\n2 - esci\n ");
+        scelta = oggetto.nextInt();
+        switch(scelta){
             case 1:
-
-            break;
-
-            case 2:
-
-            break;
-
-        }
-
-    }while (controllo != true);
-    
-    }
-        
-    public class Motore{
-
-        public static int cilindrata;
-        public static int pistoni;
-
-        public static Scanner cili = new Scanner(System.in);
-        public static Scanner pist = new Scanner(System.in);
-
-
-        public static void cilindrata(){
-
-            int cilindrata = cili.nextInt();
-
-        System.out.println("Scegli cilindrata:\n 1- 1500\n 2- 2000");
-
-        switch (cilindrata) {
-
-            case 1:
-                System.out.println("Hai scelto 1500");
+                Macchina.immettiDati(); //"The static method immettiDati() from the type esercizioMacchina should be accessed in a static way",
                 break;
-
             case 2:
-                System.out.println("Hai scelto 2000");
-                break;
+                System.exit(0);
+            default:
+                System.out.println("errore input invalido");
+                System.exit(0);
 
         }
-
-        System.out.println("Cilindrata: " + Motore.cilindrata);}
-
-        public static void pistoni(){
-
-            int pistoni = pist.nextInt();
-
-            System.out.println("Inserisci il numero di pistoni:\n" + Motore.pistoni);
-
-        }
-
-        public class Freni{
-
-            public static String nomeFreni;
-            public static int pot_fren;
-            public static int num_past;
-
-            public static Scanner pasti = new Scanner(System.in);
-            public static Scanner potenFren = new Scanner(System.in);
-            
-
-            public static void PotenzaFrenante(){
-
-                int pot_fren = potenFren.nextInt();
-
-                System.out.println("Scegli la potenza:\n 1- 1500\n 2- 2000");
-        
-                switch (pot_fren) {
-        
-                    case 1:
-                        System.out.println("Hai scelto 1500");
-                        break;
-        
-                    case 2:
-                        System.out.println("Hai scelto 2000");
-                        break;
-        
-                }
-
-                System.out.println("Potenza frenante:" + Freni.pot_fren);
-
-            }
-
-
-            public static void NumeroPastiglie(){
-
-                System.out.println("Inserire il numero di pastiglie:");
-
-                Freni.num_past = pasti.nextInt();
-
-                System.out.println("Numero pastiglie:" + Freni.num_past);
-            
-            
-            }
-
-
-        }
-
-        public static class Macchina{
-
-            Motore moto;
-            Freni fren;
-            int tar;
-
-            Macchina(Motore mo, Freni fre, int ta){
-                moto = mo;
-                fren = fre;
-                tar = ta;
-            }
-        }
-
-
-        }
-
-
-
-
-
-
-
-
-
-
+        oggetto.close();
     }
+}
 
+class Macchina{
+    public static void immettiDati(){
+        String targa;
+        Freni freno1 = new Freni();
+        Motore mot1 = new Motore();
+        Scanner oggetto = new Scanner(System.in); //int
+        Scanner oggetto1 = new Scanner(System.in); //string
+        Scanner oggetto2 = new Scanner(System.in); //double
+        
+        System.out.println("inserisci la targa della macchina: ");
+        targa = oggetto1.nextLine();
+                
+        System.out.println("inserisci la cilindrata della macchina: ");
+        mot1.cilindrata = oggetto2.nextDouble();
+                
+        System.out.println("inserisci il numero di pistoni della macchina: ");
+        mot1.pistoni = oggetto.nextInt();
 
+        System.out.println("inserisci la potenza frenante della macchina: ");
+        freno1.potenzaFrenante = oggetto2.nextDouble();
+                
+        System.out.println("inserisci il numero di elementi: ");
+        freno1.nElementi = oggetto.nextInt();
 
+        System.out.println("La targa è: " + targa + "\nLa cilindrata è: " + mot1.cilindrata + "\nHa " + mot1.pistoni + " pistoni\nLa potenza frenante è: " + freno1.potenzaFrenante + "\nIl numero di elementi: " + freno1.nElementi + "\n\n");
 
+        Automobile.Menu();
+        
+        oggetto.close();
+        oggetto1.close();
+        oggetto2.close();
+    }
+}
 
+class Motore{
+    double cilindrata;
+    int pistoni;
+}
 
-
-
-
-
-
+class Freni{
+    double potenzaFrenante;
+    int nElementi;
+}
