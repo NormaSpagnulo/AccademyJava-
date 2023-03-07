@@ -1,30 +1,46 @@
-package FIBONACCI;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class OperazioniFibonacci {
-    
-    public static void StampaNum() {
+    public static void PrintSeries(int input) {
+        int num1 = 0;
+        int num2 = 1;
+        int num3;
 
-        System.out.println("Numeri della sequenza da stampare:");
-        Scanner ins = new Scanner(System.in);
-        int ins_utente;
-        int primo_termine = 0, secondo_termine = 1;
-        ins_utente = ins.nextInt();
-        System.out.println("La serie di Fibonacci è:");
+        // stampo 0 e 1 che sono sempre i primi due numeri della serie
+        System.out.println(num1);
+        System.out.println(num2);
 
-        for (int i = 1; i <= ins_utente; i++) {
-            System.out.println(primo_termine + ", ");
-
-            // prossimo termine
-            int prossimo_termine = primo_termine + secondo_termine;
-            primo_termine = secondo_termine;
-            secondo_termine = prossimo_termine;
-
-            ins.close();
-
+        for (int i = 0; i < input; i++) {
+            num3 = num1 + num2;
+            System.out.println(num3);
+            num1 = num2;
+            num2 = num3;
         }
-
     }
+
+    public static void SearchNum(int input) {
+        ArrayList<Integer> numsGenerated = new ArrayList<Integer>();
+        int index = 0;
+        int n1 = 0;
+        int n2 = 1;
+        int n3;
+
+        while (index < 30) {
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            numsGenerated.add(n3);
+            index++;
+        }
+        // controllo se il numero fa parte della serie
+        if (numsGenerated.contains(input)) {
+            System.out.println("Il numero " + input + " fa parte della serie");
+        } else {
+            System.out.println("Il numero " + input + " non fa parte della serie");
+        }
+    }
+
 
     public static void Ricerca() {
         Scanner ins = new Scanner(System.in);
