@@ -1,4 +1,4 @@
-package METODI;
+
 public class Main {
     public static void main(String[] args) {
         // Casting implicito da int a double

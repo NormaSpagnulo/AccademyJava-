@@ -13,7 +13,7 @@ public class Generalizzato {
             Connection myConnection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/world", "root", "Root");
 
             Statement stm = myConnection.createStatement();
-            String query = "SELECT * FROM v_ItalianCities;";
+            String query = "SELECT * FROM world.city WHERE CountryCode = 'ITA';";
             ResultSet rs = stm.executeQuery(query);
 
             ResultSetMetaData metaData = rs.getMetaData();

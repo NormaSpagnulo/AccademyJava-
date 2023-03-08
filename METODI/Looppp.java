@@ -1,4 +1,4 @@
-package METODI;
+
 import java.util.Scanner;
 
 public class Looppp {
