@@ -1,4 +1,4 @@
-package METODI;
+
 import java.util.Scanner;
 import javax.tools.OptionChecker;
 import java.lang.StackWalker;
