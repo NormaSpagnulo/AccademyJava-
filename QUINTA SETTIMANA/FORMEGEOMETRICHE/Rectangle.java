@@ -1,3 +1,4 @@
+package FORMEGEOMETRICHE;
 // Definizione della classe Rectangle che estende Shape
 public class Rectangle extends Shape {
     private double lunghezza;
